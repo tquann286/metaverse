@@ -1,5 +1,10 @@
+export const MOTION_STATE = {
+  HIDDEN: 'hidden',
+  SHOW: 'show',
+}
+
 export const navVariants = {
-  hidden: {
+  [MOTION_STATE.HIDDEN]: {
     opacity: 0,
     y: -50,
     transition: {
@@ -8,7 +13,7 @@ export const navVariants = {
       damping: 140,
     },
   },
-  show: {
+  [MOTION_STATE.SHOW]: {
     opacity: 1,
     y: 0,
     transition: {
@@ -20,11 +25,11 @@ export const navVariants = {
 };
 
 export const slideIn = (direction, type, delay, duration) => ({
-  hidden: {
+  [MOTION_STATE.HIDDEN]: {
     x: direction === 'left' ? '-100%' : direction === 'right' ? '100%' : 0,
     y: direction === 'up' ? '100%' : direction === 'down' ? '100%' : 0,
   },
-  show: {
+  [MOTION_STATE.SHOW]: {
     x: 0,
     y: 0,
     transition: {
@@ -37,8 +42,8 @@ export const slideIn = (direction, type, delay, duration) => ({
 });
 
 export const staggerContainer = (staggerChildren, delayChildren) => ({
-  hidden: {},
-  show: {
+  [MOTION_STATE.HIDDEN]: {},
+  [MOTION_STATE.SHOW]: {
     transition: {
       staggerChildren,
       delayChildren,
@@ -47,11 +52,11 @@ export const staggerContainer = (staggerChildren, delayChildren) => ({
 });
 
 export const textVariant = (delay) => ({
-  hidden: {
+  [MOTION_STATE.HIDDEN]: {
     y: 50,
     opacity: 0,
   },
-  show: {
+  [MOTION_STATE.SHOW]: {
     y: 0,
     opacity: 1,
     transition: {
@@ -63,21 +68,21 @@ export const textVariant = (delay) => ({
 });
 
 export const textContainer = {
-  hidden: {
+  [MOTION_STATE.HIDDEN]: {
     opacity: 0,
   },
-  show: (i = 1) => ({
+  [MOTION_STATE.SHOW]: (i = 1) => ({
     opacity: 1,
     transition: { staggerChildren: 0.1, delayChildren: i * 0.1 },
   }),
 };
 
 export const textVariant2 = {
-  hidden: {
+  [MOTION_STATE.HIDDEN]: {
     opacity: 0,
     y: 20,
   },
-  show: {
+  [MOTION_STATE.SHOW]: {
     opacity: 1,
     y: 0,
     transition: {
@@ -88,12 +93,12 @@ export const textVariant2 = {
 };
 
 export const fadeIn = (direction, type, delay, duration) => ({
-  hidden: {
+  [MOTION_STATE.HIDDEN]: {
     x: direction === 'left' ? 100 : direction === 'right' ? -100 : 0,
     y: direction === 'up' ? 100 : direction === 'down' ? -100 : 0,
     opacity: 0,
   },
-  show: {
+  [MOTION_STATE.SHOW]: {
     x: 0,
     y: 0,
     opacity: 1,
@@ -107,11 +112,11 @@ export const fadeIn = (direction, type, delay, duration) => ({
 });
 
 export const planetVariants = (direction) => ({
-  hidden: {
+  [MOTION_STATE.HIDDEN]: {
     x: direction === 'left' ? '-100%' : '100%',
     rotate: 120,
   },
-  show: {
+  [MOTION_STATE.SHOW]: {
     x: 0,
     rotate: 0,
     transition: {
@@ -123,11 +128,11 @@ export const planetVariants = (direction) => ({
 });
 
 export const zoomIn = (delay, duration) => ({
-  hidden: {
+  [MOTION_STATE.HIDDEN]: {
     scale: 0,
     opacity: 0,
   },
-  show: {
+  [MOTION_STATE.SHOW]: {
     scale: 1,
     opacity: 1,
     transition: {
@@ -140,7 +145,7 @@ export const zoomIn = (delay, duration) => ({
 });
 
 export const footerVariants = {
-  hidden: {
+  [MOTION_STATE.HIDDEN]: {
     opacity: 0,
     y: 50,
     transition: {
@@ -149,7 +154,7 @@ export const footerVariants = {
       damping: 140,
     },
   },
-  show: {
+  [MOTION_STATE.SHOW]: {
     opacity: 1,
     y: 0,
     transition: {
